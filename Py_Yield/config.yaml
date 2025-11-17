@@ -1,0 +1,89 @@
+# Wafer Yield Analyzer Configuration
+# 晶圓良率分析器設定檔
+
+# Input settings
+input:
+  # Source directory containing Wafer_Summary Excel files
+  source_directory: "C:\\Users\\andrel52"
+  
+  # Excel cell locations
+  wafer_id_cell: "B4"
+  yield_cell: "D11"
+  
+  # File pattern to match
+  file_pattern: "Wafer_Summary"
+  
+  # Supported file extensions
+  extensions:
+    - "*.xlsx"
+    - "*.xls"
+
+# Output settings
+output:
+  # Excel report filename
+  excel_filename: "wafer_yield_report.xlsx"
+  
+  # Chart image filename
+  chart_filename: "wafer_yield_chart.png"
+  
+  # Output directory (optional, defaults to current directory)
+  output_directory: "."
+  
+  # Excel sheet names
+  data_sheet_name: "Yield Data"
+  chart_sheet_name: "Yield Chart"
+
+# Visualization settings
+visualization:
+  # Chart size (width, height) in inches
+  figure_size:
+    width: 14
+    height: 8
+  
+  # DPI for saved image
+  dpi: 300
+  
+  # Line style
+  line:
+    color: "#2E86AB"
+    width: 2.5
+  
+  # Marker style
+  marker:
+    shape: "o"
+    size: 10
+    facecolor: "#A23B72"
+    edgecolor: "white"
+    edgewidth: 2
+  
+  # Chart styling
+  chart:
+    title: "Wafer Yield Analysis"
+    title_fontsize: 18
+    xlabel: "Wafer ID"
+    ylabel: "Yield (%)"
+    label_fontsize: 14
+    grid_alpha: 0.6
+    background_color: "#F8F9FA"
+  
+  # Y-axis range adjustment (padding)
+  y_axis_padding: 5
+
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  
+# Data processing settings
+processing:
+  # Sort wafers by ID
+  sort_by_id: true
+  
+  # Skip files with errors
+  skip_on_error: true
+  
+  # Validate yield range (0-100%)
+  validate_yield_range: true
+  min_yield: 0.0
+  max_yield: 100.0
+
